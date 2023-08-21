@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<h1>O rei arthur colocou 7 códigos da cavalaria que temos que seguir, você como um cavaleiro, quer saber sobre qual deles ? porem vc tera apenas 3 aportunidades de saber sobre os 7 pq o grande mago decidiu assim.</h1>
+<big>informe sobre qual quer saber!</big>
+<input/>
+<button>click aqui e descubra</button>
+
+
+<script>
+
+var	input = document.querySelector("input")
+
+var codigoDosCavaleiros = [1,2,3,4,5,6,7]
+var mensagem = ["","1 - Buscar a perfeição humana","2 - Retidão nas ações","3 - Respeito aos semelhantes","4 - Amor pelos familiares","5 - Piedade com os enfermos","6 - Doçura com as crianças e mulheres","7 - Ser justo e valente na guerra e leal na paz"]
+function duvida() {
+
+	var duvidaDoUsuario = parseInt(input.value);
+
+		for(var tentativas = 0; tentativas <= 3; tentativas++) {
+
+				if(duvidaDoUsuario == codigoDosCavaleiros[tentativas]) {
+					alert(mensagem[tentativas]);
+				} else { 
+						alert("você excedeu o numero de tentativas")
+				}
+		}			
+}
+
+var button = document.querySelector("button");
+	button.onclick = duvida;
+
+
+
+
+
+</script>
