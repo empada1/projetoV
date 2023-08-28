@@ -7,32 +7,62 @@
 
 <script>
 
-var	input = document.querySelector("input")
+var	input = document.querySelector("input");
 
-var codigoDosCavaleiros = [1,2,3,4,5,6,7]
-var mensagem = ["1 - Buscar a perfeição humana","2 - Retidão nas ações","3 - Respeito aos semelhantes","4 - Amor pelos familiares","5 - Piedade com os enfermos","6 - Doçura com as crianças e mulheres","7 - Ser justo e valente na guerra e leal na paz"]
+var codigoDosCavaleiros = [1,2,3,4,5,6,7];
+var mensagem = ["1 - Buscar a perfeição humana",
+"2 - Retidão nas ações","3 - Respeito aos semelhantes",
+"4 - Amor pelos familiares","5 - Piedade com os enfermos",
+"6 - Doçura com as crianças e mulheres",
+"7 - Ser justo e valente na guerra e leal na paz"];
+
+let tentativas = 0;
+
 function duvida() {
 
-	var tentativas = 0
+	
 	var duvidaDoUsuario = parseInt(input.value);
 
-		for(var i = 0; i < codigoDosCavaleiros.length; i++) {
+		// for(var i = 0; i < codigoDosCavaleiros.length; i++) {
 
-				if(duvidaDoUsuario == codigoDosCavaleiros[i]) {
-					alert(mensagem[i]);
-					tentativa++;
-					break					
-				} 
-			}		
-				if(tentativa == 3) {
-					alert("você excedeu o numero de tentativas");
-				} else if (i == codigoDosCavaleiros.length) {
-					alert("código inválido. tente novamente.");
-				}
+		// 	console.log(codigoDosCavaleiros[i])
+
+		// 		if(duvidaDoUsuario == codigoDosCavaleiros[i]) {
+		// 			alert(mensagem[i]);
+		// 			tentativas++;
+		// 			break;					
+		// 		} 
+					
+		// 		if(tentativas == 3) {
+		// 			alert("você excedeu o numero de tentativas");
+		// 		} else if (i == codigoDosCavaleiros.length) {
+		// 			alert("código inválido. tente novamente.");
+		// 		}
 					
 				
-		}			
+		// }	
+		
 
+
+		if(tentativas == 3) {
+		 			alert("você excedeu o numero de tentativas");
+					return;
+		 		}
+		if(duvidaDoUsuario < 1 || duvidaDoUsuario > 7) {
+
+			alert("código inválido. tente novamente.");
+				 
+				return;
+		}
+
+
+
+
+		alert(mensagem[duvidaDoUsuario-1]);
+		
+
+		tentativas++;
+	}
 
 var button = document.querySelector("button");
 	button.onclick = duvida;
